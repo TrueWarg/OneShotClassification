@@ -1,16 +1,23 @@
 from torch.utils.data import Dataset
-from typing import Tuple
+from typing import Tuple, List
+import os
 import torch
 import cv2
 import numpy as np
 
 
 class PairMaker:
-    def __init__(self, filepath: str):
-        self._filepath = filepath
+    def __init__(self, root: str):
+        self._root = root
+        self._class_paths = os.listdir(root)
 
-    def make_pairs(self) -> Tuple:
-        pass
+    def make_pairs(self) -> List:
+        pairs = []
+        length = len(self._class_paths)
+        for i in range(0, length):
+            for j in range(i, length):
+                pass
+
 
 
 class Transformer:
